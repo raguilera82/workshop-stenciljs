@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-
-  <script type="module" src="/build/workshop-stenciljs.esm.js"></script>
-  <script nomodule src="/build/workshop-stenciljs.js"></script>
-
+    <meta charset="utf-8">
+    <title>Stencil Storybook Wrapper | Component Starter</title>
 </head>
+
 <body>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
+        header {
+            padding: 50px 20px;
+            text-align: center;
+        }
+    </style>
+    <header>
+        <h2>
+            Dev server to be used in-conjunction with Storybook server for testing components.
+        </h2>
+        <p>&copy;Sapient Consulting
+            <script>document.write(new Date().getFullYear())</script>
+        </p>
+    </header>
 </body>
+
 </html>

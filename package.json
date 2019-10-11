@@ -15,14 +15,45 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "build": "npm-run-all clean build:stencil build:storybook post:build",
+    "start": "npm-run-all --parallel stencil storybook",
+    "test": "cross-env STENCIL_ENV=dev stencil test --spec --e2e",
+    "test.watch": "cross-env STENCIL_ENV=dev stencil test --spec --e2e --watchAll",
+    "generate": "plop",
+    "storybook": "start-storybook -p 6007 -s ./stencil-utilities/public-assets",
+    "build-storybook": "build-storybook",
+    "clean": "del-cli dist storybook-static",
+    "build:stencil": "cross-env STENCIL_ENV=prod stencil build --docs",
+    "build:storybook": "build-storybook",
+    "stencil": "cross-env STENCIL_ENV=dev stencil build --dev --watch --serve --docs",
+    "prestart": "npm run build:stencil",
+    "post:build": "node ./stencil-utilities/post-build.js"
   },
   "devDependencies": {
-    "@stencil/core": "^1.3.3"
+    "@babel/core": "^7.6.4",
+    "@stencil/core": "^1.3.3",
+    "@storybook/html": "^5.2.3",
+    "@types/chalk": "^2.2.0",
+    "@types/jest": "^24.0.18",
+    "@types/lodash.kebabcase": "^4.1.6",
+    "@types/node": "^12.7.12",
+    "babel-loader": "^8.0.6",
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "del-cli": "^1.1.0",
+    "fs-extra": "^7.0.1",
+    "lodash.kebabcase": "^4.1.1",
+    "npm-run-all": "^4.1.5",
+    "plop": "^2.2.0",
+    "tslint": "^5.20.0",
+    "tslint-stencil": "^1.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "stencil": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 3333,
+    "buildDir": "build"
+  }
 }

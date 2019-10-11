@@ -23,6 +23,12 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface WsFirst {
+    /**
+    * A test prop
+    */
+    'test': string;
+  }
 }
 
 declare global {
@@ -33,13 +39,20 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLWsFirstElement extends Components.WsFirst, HTMLStencilElement {}
+  var HTMLWsFirstElement: {
+    prototype: HTMLWsFirstElement;
+    new (): HTMLWsFirstElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'ws-first': HTMLWsFirstElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface MyComponent {
     /**
     * The first name
     */
@@ -53,9 +66,16 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface WsFirst {
+    /**
+    * A test prop
+    */
+    'test'?: string;
+  }
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'ws-first': WsFirst;
   }
 }
 
@@ -64,7 +84,10 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'ws-first': LocalJSX.WsFirst & JSXBase.HTMLAttributes<HTMLWsFirstElement>;
+    }
   }
 }
 
