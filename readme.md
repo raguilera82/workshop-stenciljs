@@ -22,7 +22,7 @@ Before of nothing, you need to install the latest version of NodeJS in your work
 
 For that, the best way is thru NVM.
 
-* Linux & MacOS: https://github.com/raguilera82/workshop-stenciljs
+* Linux & MacOS: https://github.com/nvm-sh/nvm
 * Windows: https://github.com/coreybutler/nvm-windows
 
 Once installed you have to run:
@@ -118,3 +118,7 @@ Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-compone
 - Run `npm install my-component --save`
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
+
+## Any doubts or comments? 
+
+Please open an issue in this repository
