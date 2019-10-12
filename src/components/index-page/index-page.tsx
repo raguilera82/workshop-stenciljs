@@ -15,13 +15,7 @@ export class IndexPage {
   render() {
     return (
       <Host>
-        <ws-check-button
-          idCheck="demo"
-          nameCheck="demo"
-          isChecked={this.checkToggle}
-          text="Texto del button"
-          onCheckedChange={this.onChangeCheck}
-        ></ws-check-button>
+        <p>You are ready for following the workshop about StencilJS!!!!</p>
       </Host>
     );
   }
