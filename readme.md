@@ -39,9 +39,9 @@ Also, you need a text editor and a browser. For that, Visual Studio code and Chr
 To start building a new web component using Stencil and Storybook, clone this repo to a new directory:
 
 ```bash
-git clone https://github.com/raguilera82/workshop-stenciljs
-cd workshop-stenciljs
-npm install
+$> git clone https://github.com/raguilera82/workshop-stenciljs
+$> cd workshop-stenciljs
+$> npm install
 ```
 
 Once finished this process, you have to run:
