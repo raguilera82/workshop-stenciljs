@@ -27,8 +27,14 @@ For that, the best way is thru NVM.
 
 Once installed you have to run:
 
-* (Linux & MacOS) $> nvn install stable
-* (Windows) $> nvm install latest
+* (Linux & MacOS) 
+```bash
+$> nvn install stable
+```
+* (Windows) 
+```bash
+$> nvm install latest
+```
 
 And that's all!
 
@@ -119,6 +125,6 @@ Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-compone
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
 
-## Any doubts or comments? 
+## Any doubts or troubles? 
 
 Please open an issue in this repository
