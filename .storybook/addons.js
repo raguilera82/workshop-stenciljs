@@ -1,7 +1,6 @@
 // Add addon registers here 
-
-
-
+import '@storybook/addon-a11y/register';
+import '@storybook/addon-notes/register-panel';
 // ------ Stencil JS Dev Server ------
 // DO NOT DELETE 
 /**
@@ -9,6 +8,8 @@
  * Needed for socket communication.
  */
 import { stencil } from '../package.json';
+
+
 const {host, port, protocol} = stencil;
 window.STENCIL_DEV_HOST = host;
 window.STENCIL_DEV_PORT = port;

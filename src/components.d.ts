@@ -9,73 +9,48 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface WsFirst {
-    /**
-    * A test prop
-    */
-    'test': string;
+  interface IndexPage {}
+  interface WsCheckButton {
+    'idCheck': string;
+    'isChecked': boolean;
+    'nameCheck': string;
+    'text': string;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLIndexPageElement extends Components.IndexPage, HTMLStencilElement {}
+  var HTMLIndexPageElement: {
+    prototype: HTMLIndexPageElement;
+    new (): HTMLIndexPageElement;
   };
 
-  interface HTMLWsFirstElement extends Components.WsFirst, HTMLStencilElement {}
-  var HTMLWsFirstElement: {
-    prototype: HTMLWsFirstElement;
-    new (): HTMLWsFirstElement;
+  interface HTMLWsCheckButtonElement extends Components.WsCheckButton, HTMLStencilElement {}
+  var HTMLWsCheckButtonElement: {
+    prototype: HTMLWsCheckButtonElement;
+    new (): HTMLWsCheckButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
-    'ws-first': HTMLWsFirstElement;
+    'index-page': HTMLIndexPageElement;
+    'ws-check-button': HTMLWsCheckButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
-  interface WsFirst {
-    /**
-    * A test prop
-    */
-    'test'?: string;
+  interface IndexPage {}
+  interface WsCheckButton {
+    'idCheck'?: string;
+    'isChecked'?: boolean;
+    'nameCheck'?: string;
+    'onCheckedChange'?: (event: CustomEvent<any>) => void;
+    'text'?: string;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
-    'ws-first': WsFirst;
+    'index-page': IndexPage;
+    'ws-check-button': WsCheckButton;
   }
 }
 
@@ -85,8 +60,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-      'ws-first': LocalJSX.WsFirst & JSXBase.HTMLAttributes<HTMLWsFirstElement>;
+      'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
+      'ws-check-button': LocalJSX.WsCheckButton & JSXBase.HTMLAttributes<HTMLWsCheckButtonElement>;
     }
   }
 }

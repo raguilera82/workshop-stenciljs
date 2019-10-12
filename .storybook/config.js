@@ -1,5 +1,8 @@
-import { configure, addDecorator } from '@storybook/html';
-import withAssets from  './stencil';
+import { withA11y } from '@storybook/addon-a11y';
+import { addDecorator, configure } from '@storybook/html';
+import withAssets from './stencil';
+
+addDecorator(withA11y);
 
 /**
  * Add custom with assets decorator
