@@ -1,0 +1,44 @@
+/**
+ * @prop --ws-check-button-width
+ * @prop --ws-check-button-height
+ * @prop --ws-check-button-border
+ * @prop --ws-check-button-background-color
+ * @prop --ws-check-buttton-font-size
+ * @prop --ws-check-button-color
+ * @prop --ws-check-button-selected-color
+ * @prop --ws-check-button-selected-border
+ * @prop --ws-check-button-selected-background-color
+ */
+
+
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  outline: initial;
+}
+
+.ws-label {
+  width: var(--ws-check-button-width, 20%);
+  height: var(--ws-check-button-height, 45px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: var(--ws-check-button-border, solid 1px #dddddd);
+  background-color: var(--ws-check-button-background-color,  #ffffff);
+  font-family: Roboto, sans-serif;
+  font-size: var(--ws-check-buttton-font-size,14px);
+  color: var(--ws-check-button-color, #999999);
+  line-height: initial;
+}
+
+.ws-label-selected {
+  color: var(--ws-check-button-selected-color, #1b1b1b);
+  border: var(--ws-check-button-selected-border,solid 2px #307f7f);
+  background-color: var(--ws-check-button-selected-background-color, #fcfbfb);
+}
+
+
+
+
+

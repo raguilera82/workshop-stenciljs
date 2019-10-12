@@ -1,3 +1,5 @@
 :host {
   display: block;
+  --ws-check-button-width: 50%;
+  --ws-check-button-selected-border: solid 3px blue;
 }
