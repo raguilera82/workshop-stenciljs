@@ -10,24 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface IndexPage {}
-  interface WsCheckButton {
-    /**
-    * Id input checkbox
-    */
-    'idCheck': string;
-    /**
-    * Value input checkbox
-    */
-    'isChecked': boolean;
-    /**
-    * Name input checkbox
-    */
-    'nameCheck': string;
-    /**
-    * Text label
-    */
-    'text': string;
-  }
 }
 
 declare global {
@@ -38,46 +20,16 @@ declare global {
     prototype: HTMLIndexPageElement;
     new (): HTMLIndexPageElement;
   };
-
-  interface HTMLWsCheckButtonElement extends Components.WsCheckButton, HTMLStencilElement {}
-  var HTMLWsCheckButtonElement: {
-    prototype: HTMLWsCheckButtonElement;
-    new (): HTMLWsCheckButtonElement;
-  };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
-    'ws-check-button': HTMLWsCheckButtonElement;
   }
 }
 
 declare namespace LocalJSX {
   interface IndexPage {}
-  interface WsCheckButton {
-    /**
-    * Id input checkbox
-    */
-    'idCheck'?: string;
-    /**
-    * Value input checkbox
-    */
-    'isChecked'?: boolean;
-    /**
-    * Name input checkbox
-    */
-    'nameCheck'?: string;
-    /**
-    * Fire outside value input checkbox
-    */
-    'onCheckedChange'?: (event: CustomEvent<any>) => void;
-    /**
-    * Text label
-    */
-    'text'?: string;
-  }
 
   interface IntrinsicElements {
     'index-page': IndexPage;
-    'ws-check-button': WsCheckButton;
   }
 }
 
@@ -88,7 +40,6 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
-      'ws-check-button': LocalJSX.WsCheckButton & JSXBase.HTMLAttributes<HTMLWsCheckButtonElement>;
     }
   }
 }

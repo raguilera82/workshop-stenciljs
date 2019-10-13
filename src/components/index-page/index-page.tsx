@@ -1,4 +1,4 @@
-import { Component, h, Host, State } from "@stencil/core";
+import { Component, h, Host } from "@stencil/core";
 
 @Component({
   tag: "index-page",
@@ -6,22 +6,10 @@ import { Component, h, Host, State } from "@stencil/core";
   shadow: true
 })
 export class IndexPage {
-  @State() checkToggle: boolean = false;
-
-  onChangeCheck = () => {
-    this.checkToggle = !this.checkToggle;
-  };
-
   render() {
     return (
       <Host>
-        <ws-check-button
-          idCheck="demo"
-          nameCheck="demo"
-          isChecked={this.checkToggle}
-          text="Texto del button"
-          onCheckedChange={this.onChangeCheck}
-        ></ws-check-button>
+        <p>You are ready for following the workshop about StencilJS!!!!</p>
       </Host>
     );
   }
