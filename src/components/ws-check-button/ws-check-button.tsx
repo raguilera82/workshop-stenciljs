@@ -7,11 +7,16 @@ import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 })
 export class WsCheckButton {
 
+  /**Id input checkbox */
   @Prop() idCheck: string;
+  /**Value input checkbox */
   @Prop() isChecked: boolean = false;
+  /**Name input checkbox */
   @Prop() nameCheck: string;
+  /**Text label */
   @Prop() text: string;
 
+  /**Fire outside value input checkbox */
   @Event() checkedChange: EventEmitter;
 
   render() {

@@ -1,6 +1,7 @@
 // Add addon registers here 
 import '@storybook/addon-a11y/register';
-import '@storybook/addon-notes/register-panel';
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-notes/register';
 // ------ Stencil JS Dev Server ------
 // DO NOT DELETE 
 /**

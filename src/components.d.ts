@@ -11,9 +11,21 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface IndexPage {}
   interface WsCheckButton {
+    /**
+    * Id input checkbox
+    */
     'idCheck': string;
+    /**
+    * Value input checkbox
+    */
     'isChecked': boolean;
+    /**
+    * Name input checkbox
+    */
     'nameCheck': string;
+    /**
+    * Text label
+    */
     'text': string;
   }
 }
@@ -41,10 +53,25 @@ declare global {
 declare namespace LocalJSX {
   interface IndexPage {}
   interface WsCheckButton {
+    /**
+    * Id input checkbox
+    */
     'idCheck'?: string;
+    /**
+    * Value input checkbox
+    */
     'isChecked'?: boolean;
+    /**
+    * Name input checkbox
+    */
     'nameCheck'?: string;
+    /**
+    * Fire outside value input checkbox
+    */
     'onCheckedChange'?: (event: CustomEvent<any>) => void;
+    /**
+    * Text label
+    */
     'text'?: string;
   }
 
