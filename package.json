@@ -11,8 +11,7 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/workshop-stenciljs/workshop-stenciljs.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "build": "npm-run-all clean build:stencil build:storybook post:build",
