@@ -11,8 +11,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface IndexPage {}
-  interface PocValue {
-    'valuer': any;
+  interface WcCircleProgress {
+    'progressAmount': string;
+    'progressColor': string;
   }
 }
 
@@ -25,26 +26,27 @@ declare global {
     new (): HTMLIndexPageElement;
   };
 
-  interface HTMLPocValueElement extends Components.PocValue, HTMLStencilElement {}
-  const HTMLPocValueElement: {
-    prototype: HTMLPocValueElement;
-    new (): HTMLPocValueElement;
+  interface HTMLWcCircleProgressElement extends Components.WcCircleProgress, HTMLStencilElement {}
+  const HTMLWcCircleProgressElement: {
+    prototype: HTMLWcCircleProgressElement;
+    new (): HTMLWcCircleProgressElement;
   };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
-    'poc-value': HTMLPocValueElement;
+    'wc-circle-progress': HTMLWcCircleProgressElement;
   }
 }
 
 declare namespace LocalJSX {
   interface IndexPage {}
-  interface PocValue {
-    'valuer'?: any;
+  interface WcCircleProgress {
+    'progressAmount'?: string;
+    'progressColor'?: string;
   }
 
   interface IntrinsicElements {
     'index-page': IndexPage;
-    'poc-value': PocValue;
+    'wc-circle-progress': WcCircleProgress;
   }
 }
 
@@ -55,7 +57,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
-      'poc-value': LocalJSX.PocValue & JSXBase.HTMLAttributes<HTMLPocValueElement>;
+      'wc-circle-progress': LocalJSX.WcCircleProgress & JSXBase.HTMLAttributes<HTMLWcCircleProgressElement>;
     }
   }
 }
