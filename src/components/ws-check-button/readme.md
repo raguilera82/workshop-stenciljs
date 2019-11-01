@@ -35,22 +35,9 @@
 | `--ws-check-button-selected-border-color`     | #307f7f     |
 | `--ws-check-button-selected-border-weight`    | 2px         |
 | `--ws-check-button-selected-color`            | #1b1b1b     |
-| `--ws-check-button-width`                     | --> 20%     |
+| `--ws-check-button-width`                     | 20%         |
 | `--ws-check-buttton-font-size`                | 14px        |
 
-
-## Dependencies
-
-### Used by
-
- - [index-page](../index-page)
-
-### Graph
-```mermaid
-graph TD;
-  index-page --> ws-check-button
-  style ws-check-button fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 
