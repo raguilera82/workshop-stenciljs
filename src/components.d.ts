@@ -11,7 +11,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface IndexPage {}
-  interface WsLayoutHoly {}
 }
 
 declare global {
@@ -22,25 +21,16 @@ declare global {
     prototype: HTMLIndexPageElement;
     new (): HTMLIndexPageElement;
   };
-
-  interface HTMLWsCheckButtonElement extends Components.WsCheckButton, HTMLStencilElement {}
-  const HTMLWsCheckButtonElement: {
-    prototype: HTMLWsCheckButtonElement;
-    new (): HTMLWsCheckButtonElement;
-  };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
-    'ws-layout-holy': HTMLWsLayoutHolyElement;
   }
 }
 
 declare namespace LocalJSX {
   interface IndexPage {}
-  interface WsLayoutHoly {}
 
   interface IntrinsicElements {
     'index-page': IndexPage;
-    'ws-layout-holy': WsLayoutHoly;
   }
 }
 
@@ -51,7 +41,6 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
-      'ws-layout-holy': LocalJSX.WsLayoutHoly & JSXBase.HTMLAttributes<HTMLWsLayoutHolyElement>;
     }
   }
 }
