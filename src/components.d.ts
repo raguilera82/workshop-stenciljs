@@ -23,10 +23,10 @@ declare global {
     new (): HTMLIndexPageElement;
   };
 
-  interface HTMLWsLayoutHolyElement extends Components.WsLayoutHoly, HTMLStencilElement {}
-  const HTMLWsLayoutHolyElement: {
-    prototype: HTMLWsLayoutHolyElement;
-    new (): HTMLWsLayoutHolyElement;
+  interface HTMLWsCheckButtonElement extends Components.WsCheckButton, HTMLStencilElement {}
+  const HTMLWsCheckButtonElement: {
+    prototype: HTMLWsCheckButtonElement;
+    new (): HTMLWsCheckButtonElement;
   };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
