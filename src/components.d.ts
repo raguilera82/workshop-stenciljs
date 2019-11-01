@@ -11,6 +11,25 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface IndexPage {}
+  interface WsCheckButton {
+    /**
+    * Id input checkbox
+    */
+    'idCheck': string;
+    /**
+    * Value input checkbox
+    */
+    'isChecked': boolean;
+    /**
+    * Name input checkbox
+    */
+    'nameCheck': string;
+    /**
+    * Text label
+    */
+    'text': string;
+  }
+  interface WsLayoutHoly {}
 }
 
 declare global {
@@ -21,16 +40,55 @@ declare global {
     prototype: HTMLIndexPageElement;
     new (): HTMLIndexPageElement;
   };
+
+  interface HTMLWsCheckButtonElement extends Components.WsCheckButton, HTMLStencilElement {}
+  const HTMLWsCheckButtonElement: {
+    prototype: HTMLWsCheckButtonElement;
+    new (): HTMLWsCheckButtonElement;
+  };
+
+  interface HTMLWsLayoutHolyElement extends Components.WsLayoutHoly, HTMLStencilElement {}
+  const HTMLWsLayoutHolyElement: {
+    prototype: HTMLWsLayoutHolyElement;
+    new (): HTMLWsLayoutHolyElement;
+  };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
+    'ws-check-button': HTMLWsCheckButtonElement;
+    'ws-layout-holy': HTMLWsLayoutHolyElement;
   }
 }
 
 declare namespace LocalJSX {
   interface IndexPage {}
+  interface WsCheckButton {
+    /**
+    * Id input checkbox
+    */
+    'idCheck'?: string;
+    /**
+    * Value input checkbox
+    */
+    'isChecked'?: boolean;
+    /**
+    * Name input checkbox
+    */
+    'nameCheck'?: string;
+    /**
+    * Fire outside value input checkbox
+    */
+    'onCheckedChange'?: (event: CustomEvent<any>) => void;
+    /**
+    * Text label
+    */
+    'text'?: string;
+  }
+  interface WsLayoutHoly {}
 
   interface IntrinsicElements {
     'index-page': IndexPage;
+    'ws-check-button': WsCheckButton;
+    'ws-layout-holy': WsLayoutHoly;
   }
 }
 
@@ -41,6 +99,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
+      'ws-check-button': LocalJSX.WsCheckButton & JSXBase.HTMLAttributes<HTMLWsCheckButtonElement>;
+      'ws-layout-holy': LocalJSX.WsLayoutHoly & JSXBase.HTMLAttributes<HTMLWsLayoutHolyElement>;
     }
   }
 }

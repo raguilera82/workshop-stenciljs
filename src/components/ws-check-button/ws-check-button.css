@@ -1,0 +1,41 @@
+/**
+ * @prop --ws-check-button-width: 20%
+ * @prop --ws-check-button-height: 45px
+ * @prop --ws-check-button-border-color: #dddddd
+ * @prop --ws-check-button-border-weight: 1px
+ * @prop --ws-check-button-background-color: #ffffff
+ * @prop --ws-check-buttton-font-size: 14px
+ * @prop --ws-check-button-color: #999999
+ * @prop --ws-check-button-selected-color: #1b1b1b
+ * @prop --ws-check-button-selected-border-color: #307f7f
+ * @prop --ws-check-button-selected-border-weight: 2px
+ * @prop --ws-check-button-selected-background-color: #fcfbfb
+ */
+
+
+ input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  outline: initial;
+}
+
+.ws-label {
+  width: var(--ws-check-button-width, 20%);
+  height: var(--ws-check-button-height, 45px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: var(--ws-check-button-border-color, #dddddd) solid var(--ws-check-button-border-weight, 1px);
+  background-color: var(--ws-check-button-background-color,  #ffffff);
+  font-family: Roboto, sans-serif;
+  font-size: var(--ws-check-buttton-font-size, 14px);
+  color: var(--ws-check-button-color, #999999);
+  line-height: initial;
+}
+
+.ws-label-selected {
+  color: var(--ws-check-button-selected-color, #1b1b1b);
+  border: var(--ws-check-button-selected-border-color, #307f7f) solid var(--ws-check-button-selected-border-weight, 2px);
+  background-color: var(--ws-check-button-selected-background-color, #fcfbfb);
+}
