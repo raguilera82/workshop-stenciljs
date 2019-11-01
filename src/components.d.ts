@@ -11,9 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface IndexPage {}
-  interface PocValue {
-    'valuer': any;
-  }
+  interface WsLayoutHoly {}
 }
 
 declare global {
@@ -25,26 +23,24 @@ declare global {
     new (): HTMLIndexPageElement;
   };
 
-  interface HTMLPocValueElement extends Components.PocValue, HTMLStencilElement {}
-  const HTMLPocValueElement: {
-    prototype: HTMLPocValueElement;
-    new (): HTMLPocValueElement;
+  interface HTMLWsLayoutHolyElement extends Components.WsLayoutHoly, HTMLStencilElement {}
+  const HTMLWsLayoutHolyElement: {
+    prototype: HTMLWsLayoutHolyElement;
+    new (): HTMLWsLayoutHolyElement;
   };
   interface HTMLElementTagNameMap {
     'index-page': HTMLIndexPageElement;
-    'poc-value': HTMLPocValueElement;
+    'ws-layout-holy': HTMLWsLayoutHolyElement;
   }
 }
 
 declare namespace LocalJSX {
   interface IndexPage {}
-  interface PocValue {
-    'valuer'?: any;
-  }
+  interface WsLayoutHoly {}
 
   interface IntrinsicElements {
     'index-page': IndexPage;
-    'poc-value': PocValue;
+    'ws-layout-holy': WsLayoutHoly;
   }
 }
 
@@ -55,7 +51,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
-      'poc-value': LocalJSX.PocValue & JSXBase.HTMLAttributes<HTMLPocValueElement>;
+      'ws-layout-holy': LocalJSX.WsLayoutHoly & JSXBase.HTMLAttributes<HTMLWsLayoutHolyElement>;
     }
   }
 }
