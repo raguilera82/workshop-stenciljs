@@ -29,7 +29,7 @@ Once installed you have to run:
 
 * (Linux & MacOS) 
 ```bash
-$> nvn install stable
+$> nvm install stable
 ```
 * (Windows) 
 ```bash
