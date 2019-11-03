@@ -29,7 +29,7 @@ Once installed you have to run:
 
 * (Linux & MacOS) 
 ```bash
-$> nvn install stable
+$> nvm install stable
 ```
 * (Windows) 
 ```bash
@@ -38,7 +38,7 @@ $> nvm install latest
 
 And that's all!
 
-Also, you need a text editor and a browser. For that, Visual Studio code and Chrome are the best!
+Also, you need a text editor and a browser. For that, Visual Studio Code and Chrome are the best!
 
 ## Getting Started
 
@@ -71,7 +71,7 @@ For that, you have to run:
 $> npm run generate
 ```
 
-The console asks for a name of the component and you can select the files taht you want to create.
+The console asks for a name of the component and you can select the files that you want to create.
 
 ### Build Stencil & Storybook for production
 
@@ -84,7 +84,7 @@ This command creates two folders:
 * dist: for StencilJS
 * storybook-static: for Storybook
 
-if you want to build only Stencil, you have to run:
+If you want to build only Stencil, you have to run:
 
 ```bash
 $> npm run build:stencil
