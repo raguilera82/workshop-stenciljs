@@ -10,6 +10,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface CjsChild {
+    'messageFromFather': string;
+    'setPaga': (money: number) => Promise<void>;
+  }
   interface IndexPage {}
   interface WsCheckButton {
     /**
@@ -35,6 +39,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLCjsChildElement extends Components.CjsChild, HTMLStencilElement {}
+  const HTMLCjsChildElement: {
+    prototype: HTMLCjsChildElement;
+    new (): HTMLCjsChildElement;
+  };
+
   interface HTMLIndexPageElement extends Components.IndexPage, HTMLStencilElement {}
   const HTMLIndexPageElement: {
     prototype: HTMLIndexPageElement;
@@ -53,6 +63,7 @@ declare global {
     new (): HTMLWsLayoutHolyElement;
   };
   interface HTMLElementTagNameMap {
+    'cjs-child': HTMLCjsChildElement;
     'index-page': HTMLIndexPageElement;
     'ws-check-button': HTMLWsCheckButtonElement;
     'ws-layout-holy': HTMLWsLayoutHolyElement;
@@ -60,6 +71,10 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CjsChild {
+    'messageFromFather'?: string;
+    'onReply'?: (event: CustomEvent<any>) => void;
+  }
   interface IndexPage {}
   interface WsCheckButton {
     /**
@@ -86,6 +101,7 @@ declare namespace LocalJSX {
   interface WsLayoutHoly {}
 
   interface IntrinsicElements {
+    'cjs-child': CjsChild;
     'index-page': IndexPage;
     'ws-check-button': WsCheckButton;
     'ws-layout-holy': WsLayoutHoly;
@@ -98,6 +114,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'cjs-child': LocalJSX.CjsChild & JSXBase.HTMLAttributes<HTMLCjsChildElement>;
       'index-page': LocalJSX.IndexPage & JSXBase.HTMLAttributes<HTMLIndexPageElement>;
       'ws-check-button': LocalJSX.WsCheckButton & JSXBase.HTMLAttributes<HTMLWsCheckButtonElement>;
       'ws-layout-holy': LocalJSX.WsLayoutHoly & JSXBase.HTMLAttributes<HTMLWsLayoutHolyElement>;

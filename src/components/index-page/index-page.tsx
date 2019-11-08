@@ -1,4 +1,5 @@
-import { Component, h, Host } from "@stencil/core";
+import { Component, Element, h, Host, Listen, State } from "@stencil/core";
+import { HTMLStencilElement } from "@stencil/core/internal";
 
 @Component({
   tag: "index-page",
@@ -6,10 +7,27 @@ import { Component, h, Host } from "@stencil/core";
   shadow: true
 })
 export class IndexPage {
+
+  @State() messageFromChild: string;
+
+  @Element() element: HTMLStencilElement;
+
+  @Listen('reply')
+  onReply(ev: CustomEvent) {
+    this.messageFromChild = ev.detail;
+  }
+
+  tomaPaga = async () => {
+    const child = this.element.shadowRoot.querySelector('cjs-child');
+    await child.setPaga(5);
+  }
+
   render() {
     return (
       <Host>
-        <p>You are ready for following the workshop about StencilJS!!!!</p>
+        <cjs-child messageFromFather="I am your father"></cjs-child>
+        <p>Message from child: {this.messageFromChild}</p>
+        <button onClick={this.tomaPaga}>Toma paga</button>
       </Host>
     );
   }
